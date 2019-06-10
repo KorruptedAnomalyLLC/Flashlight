@@ -18,33 +18,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-n3-Kya">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mig-n3-Kya">
                                 <rect key="frame" x="107" y="403" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="CIk-8X-n5X"/>
                                     <constraint firstAttribute="width" constant="200" id="XIS-DV-XlG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
                                 <state key="normal" title="Turn On">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="flashlightToggleButtonTapped:" destination="AFy-Fy-9Bu" eventType="touchUpInside" id="41c-o7-4Oa"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Mig-n3-Kya" firstAttribute="centerX" secondItem="94F-rx-Vrx" secondAttribute="centerX" id="Kuk-eg-ytm"/>
                             <constraint firstItem="Mig-n3-Kya" firstAttribute="centerY" secondItem="94F-rx-Vrx" secondAttribute="centerY" id="VPJ-Gb-Kz6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="94F-rx-Vrx"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NQR-93-Ek5" appends="YES" id="E9h-yi-rTQ"/>
+                            <outletCollection property="gestureRecognizers" destination="rHH-Eq-szw" appends="YES" id="48L-Vo-dGA"/>
+                            <outletCollection property="gestureRecognizers" destination="XBb-IR-yIY" appends="YES" id="gfn-U0-vJT"/>
+                            <outletCollection property="gestureRecognizers" destination="DsC-rP-yVS" appends="YES" id="hXB-LE-01W"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="flashlightToggleButton" destination="Mig-n3-Kya" id="4DD-DS-Cgg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEp-GK-S4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="NQR-93-Ek5" userLabel="Swipe Gesture Recognizer Right">
+                    <connections>
+                        <action selector="userHasSwipedRight:" destination="AFy-Fy-9Bu" id="pJ7-Ha-5NK"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="rHH-Eq-szw" userLabel="Swipe Gesture Recognizer Left">
+                    <connections>
+                        <action selector="userHasSwipedLeft:" destination="AFy-Fy-9Bu" id="FqH-ud-lW3"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="XBb-IR-yIY" userLabel="Swipe Gesture Recognizer Up">
+                    <connections>
+                        <action selector="userHasSwipedUp:" destination="AFy-Fy-9Bu" id="UD3-eE-asR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="DsC-rP-yVS" userLabel="Swipe Gesture Recognizer Down">
+                    <connections>
+                        <action selector="userHasSwipedDown:" destination="AFy-Fy-9Bu" id="rpT-zh-bh2"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="301" y="135"/>
         </scene>
